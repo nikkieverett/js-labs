@@ -7,7 +7,7 @@ describe('Conditionals are for making decisions.', function() {
 
     if (result === undefined) {
       //uncomment the line below.
-      //result = 'stuff';
+      result = 'stuff';
     }
 
     chai.assert.equal(result, 'stuff');
@@ -61,11 +61,11 @@ describe('Conditionals are for making decisions.', function() {
 
     //uncomment the line of code that will be run.
     if (result === undefined) {
-      //result = 100;
+      result = 100;
     }
     else if (result === 1) {
-      //result += 1;
-    }
+      result += 1;
+    
 
     chai.assert.equal(result, 2);
   });
