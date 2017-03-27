@@ -9,8 +9,8 @@ describe('Array and Loop Challenge ', function() {
   });
 
   challenge('Implement this function that sums an array of numbers.', function() {
-    var nums = [2, 6, 7, 41, 9];
-    var result = sumArrayOfNumbers(nums);
+    var arr = [2, 6, 7, 41, 9];
+    var result = sumArrayOfNumbers(arr);
 
     chai.assert.equal(result, 65);
   });

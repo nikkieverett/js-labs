@@ -7,7 +7,7 @@ describe('An array', function() {
     var arrayOfNumbers = [1, 2, 3, 4];
 
     //How can you get the number of items and put it in this variable?
-    var theNumberOfItems;
+    var theNumberOfItems= arrayOfNumbers.length;
 
     chai.assert.equal(theNumberOfItems, 4);
   });
@@ -16,7 +16,7 @@ describe('An array', function() {
     var people = ['Bob', 'Joan', 'Artaxerxes', 'Fred'];
 
     //Use the (zero-based) indexer to get the item in the second location.
-    var theSecondName;
+    var theSecondName= people[1];
 
     chai.assert.equal(theSecondName, 'Joan');
   });
@@ -25,6 +25,8 @@ describe('An array', function() {
     var arrayOfNumbers = [2, 1, 3, 4];
 
     //Add the number "5" to this array with push.
+
+    arrayOfNumbers.push(5);
 
     chai.assert.equal(arrayOfNumbers.length, 5);
     chai.assert.equal(arrayOfNumbers[4], 5);
@@ -40,7 +42,7 @@ describe('An array', function() {
     arrayOfNumbers.push(4);
 
     //Use pop!
-    var theLastItem;
+    var theLastItem = arrayOfNumbers.pop();
 
     chai.assert.equal(arrayOfNumbers.length, 3);
     chai.assert.equal(theLastItem, 4);
@@ -50,7 +52,9 @@ describe('An array', function() {
     var arrayOfNumbers = [1, 2, 3, 4];
 
     //Use shift to remove the first item and put it in this variable.
-    var theFirstItem;
+    var theFirstItem = arrayOfNumbers.shift();
+
+    //[2, 3, 4]
 
     chai.assert.equal(arrayOfNumbers.length, 3);
     chai.assert.equal(theFirstItem, 1);
@@ -60,6 +64,7 @@ describe('An array', function() {
     var arrayOfNumbers = [1, 3, 2, 4];
 
     //Use unshift to add a number to the beginning.
+    arrayOfNumbers.unshift(0);
 
     chai.assert.equal(arrayOfNumbers.length, 5);
     chai.assert.equal(arrayOfNumbers[0], 0);
@@ -70,7 +75,7 @@ describe('An array', function() {
     var secondArray = [60, 61];
 
     //Use concat to combine the two arrays into one new array.
-    var combinedArray;
+    var combinedArray = firstArray.concat(secondArray);
 
     chai.assert.equal(combinedArray.length, 4);
   });
@@ -79,7 +84,8 @@ describe('An array', function() {
     var people = ['Barbara', 'Bob', 'Joan', 'Artaxerxes', 'Fred', 'Frank', 'Martha'];
 
     //Use splice to remove Joan to Fred.
-    var subset;
+    //specify start position and number of items you would like removed (including starting element)
+    var subset = people.splice(2, 3);
 
     chai.assert.equal(subset[0], 'Joan');
     chai.assert.equal(subset.length, 3);
@@ -90,7 +96,11 @@ describe('An array', function() {
     var people = ['Barbara', 'Bob', 'Joan', 'Artaxerxes', 'Fred', 'Frank', 'Martha'];
 
     //Use slice to copy Joan to Fred.
-    var copiedSubset;
+    //specify start position and end position + 1 because
+    //first number is inclusive second number is exclusive
+    //inclusive means choosing a number 1-100 including the numbers 1 and 1-100
+    //exclusive means choosing a number 1-100 not including the numbers 1 and 1-100
+    var copiedSubset = people.slice(2, 5);
 
     chai.assert.equal(copiedSubset[0], 'Joan');
     chai.assert.equal(copiedSubset.length, 3);
@@ -101,7 +111,7 @@ describe('An array', function() {
     var people = ['Bob', 'Joan', 'Artaxerxes', 'Fred'];
 
     //Use join to create a comma delimited string of the names.
-    var string;
+    var string = people.join(',');
 
     chai.assert.equal(string, 'Bob,Joan,Artaxerxes,Fred');
   });
@@ -110,7 +120,7 @@ describe('An array', function() {
     var people = ['Bob', 'Joan', 'Artaxerxes', 'Fred'];
 
     //At what index location is the string 'Artaxerxes'? Use indexOf to find out.
-    var index;
+    var index = people.indexOf('Artaxerxes');
 
     chai.assert.equal(index, 2);
   });
