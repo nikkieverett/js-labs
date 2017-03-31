@@ -8,6 +8,8 @@ describe('HL7', function() {
 
     var pid = 'PID|||PATID1234^5^M11||JONES^WILLIAM^A^III||19610615|M-||C|1200 N ELM^STREET^^GREENSBORO^NC^27401-1020|GL|(919)379-1212|(919)271-3434||S||PATID12345001^2^M10|123456789|9-87654^NC';
 
+    //pidArray = ['PID|', 'PATID1234^5^M11', 'JONES^WILLIAM^A^III', '19610615|M-', 'C|1200 N ELM^STREET^GREENSBORO^NC^27401-1020|GL\(919)379-1212|(919)271-3434', 'S', 'PATID12345001^2^M10|123456789|9-87654^NC']
+
     it('can return the name.', function() {
       var name = PIDParser.name(pid);
       chai.assert.equal(name, 'JONES^WILLIAM^A^III');
