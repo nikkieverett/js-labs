@@ -1,13 +1,11 @@
 function onlyDigits(str) {
 
   // for (var i = 0; i < str.length; i++) {
-  //   if (['a-z'].indexOf(str[i] > -1)){
+  //   if (['a-z'].indexOf(str[i]) > -1){
   //      return false;
   //   }
-  //   else {
-  //     return true;
-  //   }
   // }
+  // return true;
 
   var result = '';
 
@@ -43,15 +41,11 @@ function formatCreditCardNumber(str) {
 
 function missingInteger(str) {
 
-  var num = 0;
+  for (var i = 0; i <= 9; i++) {
 
-  for (var i = 0; i < str.length; i++) {
-    // while ( num < 10){
-
-    if (str.indexOf(num) == -1){
-      return num;
+    if (str.indexOf(i) == -1){
+      return i;
     }
-    num ++;
   }
 }
 
@@ -112,7 +106,7 @@ function kabobCase(str) {
     if (i == (array.length-1)){
       output += array[i];
     }
-    else{
+    else {
       output += array[i] + '-';
     }
   }
@@ -120,28 +114,20 @@ function kabobCase(str) {
 }
 
 function camelCase(str) {
-  var output = str;
 
-  for (var i = 0; i < str.length; i++) {
-    // if (i === 0) {
-    //   output += str[i];
-    // }
-    if (str[i] === ' ') {
-      var sub = str.substr([i+1],1);
-      sub = sub.toUpperCase();
-      //
-      output = output.replace(str[i+1], sub);
-      console.log(output);
+  var strArray = str.split(' ');
+  var output = '';
+
+  for (var i = 0; i < strArray.length; i++) {
+    if (i === 0) {
+      output += strArray[i].toLowerCase();
     }
-    // else if ('[A-Z]'.indexOf(str) > -1) {
-    //   console.log(str[i]);
-    // }
-    // else {
-    //   output += str[i];
-    // }
+    else {
+      var string = strArray[i];
+      var firstLetter = string[0].toUpperCase();
+      var restOfLetters = string.slice(1).toLowerCase();
+      output += firstLetter + restOfLetters;
+    }
   }
-
-  var result = output.replace(/ /g, '');
-  console.log(result);
-  return result;
+  return output;
 }

@@ -51,7 +51,7 @@ describe('String Challenge', function() {
   challenge('Implement the `reverseWord` function so that you can pass any word in and it will reverse the letters.', function() {
     var result = reverseWord('bucket');
     chai.assert.equal(result, 'tekcub');
-  })
+  });
 
   challenge('Implement the `reverseSentence` function so that you can pass any sentence in and it will reverse the order of the words.', function() {
     var result = reverseSentence('I bought a steak');

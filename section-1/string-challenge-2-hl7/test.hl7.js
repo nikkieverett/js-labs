@@ -25,7 +25,10 @@ describe('HL7', function() {
       chai.assert.equal(birthMonth, 6);
     });
 
-    //TODO: Write a test for the birth day.
+    it('can return the day of birth.', function() {
+      var birthDay = PIDParser.birthDay(pid);
+      chai.assert.equal(birthDay,15);
+    });
   });
 
   describe('MSH parser', function() {
